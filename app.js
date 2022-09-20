@@ -2,7 +2,7 @@ const express = require('express');
 const res = require('express/lib/response');
 
 const app = express();
-
+const port = process.env.PORT || 3000
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
@@ -57,4 +57,4 @@ app.delete('/movie/:id', (req,res) => {
     res.send("FIlme foi apagado!");
 });
 
-app.listen(8080, () => console.log('Servidor iniciado na porta 8080'));
+app.listen(port, () => console.log(`servidor na porta ${port}`));
